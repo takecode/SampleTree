@@ -15,7 +15,7 @@ treeAppControllers.controller('IndexController', ['$scope', function ( $scope ) 
     };
 
     $scope.addNode = function(){
-        $scope.tree.add();
+        $scope.tree.insert();
     }
 
     $scope.initializeIndex();

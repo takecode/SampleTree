@@ -20,7 +20,7 @@ function Tree(){
     this.root = null;
 }
 
-Tree.prototype.add = function( number ){
+Tree.prototype.insert = function( number ){
     var node = new Node( number );
     if( this.root === null || this.root === undefined ){
         this.root = node;
@@ -53,4 +53,9 @@ Tree.prototype.add = function( number ){
         }
     }
     //this.list.push( node );
+}
+
+// TODO
+Tree.prototype.delete = function( node ){
+
 }
