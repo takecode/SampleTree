@@ -18,5 +18,8 @@ treeAppControllers.controller('IndexController', ['$scope', '$http', function ( 
     $scope.indexObject = {};
     $scope.initializeIndex();
     $scope.sample = "haha";
+    $scope.tree = new Node(  );
+    $scope.tree2 = new Node( 3 );
+    $scope.tree3 = new Node(  );
 }]);
 
