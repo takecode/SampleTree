@@ -9,10 +9,14 @@ treeAppControllers.controller('IndexController', ['$scope', function ( $scope ) 
         $scope.tree = new Tree();
         var length = 9;
         for( var i = 0; i < length; i++ ){
-            $scope.tree.add();
+            $scope.addNode();
         }
         $scope.root = $scope.tree.root;
     };
+
+    $scope.addNode = function(){
+        $scope.tree.add();
+    }
 
     $scope.initializeIndex();
 }]);
