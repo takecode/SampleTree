@@ -15,11 +15,12 @@
 
 <p> Count of nodes: {{tree.list.length}}</p>
 <ul>
-    <!--
-    <li ng-repeat="node in tree.list track by $index">
-        Number: {{node.number}}, Degree: {{node.degree}}
+    <li>
+        Root Node: {{root.number}}
     </li>
-    -->
+
+    <ng-include src="'html/nodeTemplate.html'"></ng-include>
+
 </ul>
 
 </body>

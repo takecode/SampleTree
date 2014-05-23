@@ -16,7 +16,7 @@ function Node( number ){
 };
 
 function Tree(){
-    this.list = new Array();
+    //this.list = new Array();
     this.root = null;
 }
 
@@ -52,5 +52,5 @@ Tree.prototype.add = function( number ){
             }
         }
     }
-    this.list.push( node );
+    //this.list.push( node );
 }
