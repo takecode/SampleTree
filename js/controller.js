@@ -4,22 +4,17 @@
 var treeAppControllers = angular.module('treeApp.Controller', []);
 
 // Index Controller
-treeAppControllers.controller('IndexController', ['$scope', '$http', function ( $scope, $http ) {
-    /*
-    $http.get('Resources/Environment.json').success(function (data) {
-        $scope.environment = data;
-
-    });
-    */
-
+treeAppControllers.controller('IndexController', ['$scope', function ( $scope ) {
     $scope.initializeIndex = function () {
+        $scope.tree = new Tree();
+        $scope.tree.add();
+        $scope.tree.add();
+        $scope.tree.add();
+        $scope.tree.add();
+        $scope.tree.add();
+        $scope.tree.add();
     };
 
-    $scope.indexObject = {};
     $scope.initializeIndex();
-    $scope.sample = "haha";
-    $scope.tree = new Node(  );
-    $scope.tree2 = new Node( 3 );
-    $scope.tree3 = new Node(  );
 }]);
 

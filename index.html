@@ -13,10 +13,14 @@
 </head>
 <body ng-controller="IndexController">
 
-<p> Sample Tree! {{sample}}</p>
-<p> Tree Number 1: {{tree.number}}</p>
-<p> Tree Number 2: {{tree2.number}}</p>
-<p> Tree Number 3: {{tree3.number}}</p>
+<p> Count of nodes: {{tree.list.length}}</p>
+<ul>
+    <!--
+    <li ng-repeat="node in tree.list track by $index">
+        Number: {{node.number}}, Degree: {{node.degree}}
+    </li>
+    -->
+</ul>
 
 </body>
 </html>
