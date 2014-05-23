@@ -15,14 +15,16 @@
 <body ng-controller="IndexController">
 
 <form ng-submit="addNode()">
-    Count of nodes: {{tree.list.length}}
-    <button ng-click="addRandomNode()">Add Random Number</button>
+    <input type="button" ng-click="addRandomNode()" class="btn btn-primary btn-sm" value="Add Random Number">
     <input type="number" ng-model="number" placeholder="Type a number" />
-    <input type="submit" id="submit" value="Add Number" />
+    <input type="submit" class="btn btn-primary btn-sm" id="submit" value="Add Number" />
 </form>
 <ul>
     <li>
-        Root Node(0): {{root.number}}
+        Count of nodes: {{tree.list.length}}
+    </li>
+    <li>
+        Root(0): {{root.number}}
     </li>
 
     <ng-include src="'html/nodeTemplate.html'"></ng-include>

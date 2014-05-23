@@ -1,4 +1,4 @@
-var MAX = 10000;
+var MAX = 1000;
 
 function Node( number ){
     this.number = 0;
