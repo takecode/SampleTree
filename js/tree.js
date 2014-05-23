@@ -5,7 +5,7 @@ function Node( number ){
     this.parent = null;
     this.left = null;
     this.right = null;
-    this.degree = 0;
+    this.depth = 0;
 
     if( number === undefined ){
         this.number = Math.floor((Math.random() * MAX) + 1);
@@ -32,7 +32,7 @@ Tree.prototype.add = function( number ){
                 if( parentNode.left === null ){
                     parentNode.left = node;
                     node.parent = parentNode;
-                    node.degree = parentNode.degree + 1;
+                    node.depth = parentNode.depth + 1;
                     break;
                 }
                 else{
@@ -43,7 +43,7 @@ Tree.prototype.add = function( number ){
                 if( parentNode.right === null ){
                     parentNode.right = node;
                     node.parent = parentNode;
-                    node.degree = parentNode.degree + 1;
+                    node.depth = parentNode.depth + 1;
                     break;
                 }
                 else{
