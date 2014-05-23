@@ -5,6 +5,7 @@
     <title>Sample Tree App</title>
 
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
     <script src="js/tree.js"></script>
@@ -13,7 +14,12 @@
 </head>
 <body ng-controller="IndexController">
 
-<p> Count of nodes: {{tree.list.length}} <button ng-click="addNode()">Add Node</button></p>
+<form ng-submit="addNode()">
+    Count of nodes: {{tree.list.length}}
+    <button ng-click="addRandomNode()">Add Random Number</button>
+    <input type="number" ng-model="number" placeholder="Type a number" />
+    <input type="submit" id="submit" value="Add Number" />
+</form>
 <ul>
     <li>
         Root Node(0): {{root.number}}

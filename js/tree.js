@@ -16,7 +16,7 @@ function Node( number ){
 };
 
 function Tree(){
-    //this.list = new Array();
+    this.list = new Array();
     this.root = null;
 }
 
@@ -52,7 +52,7 @@ Tree.prototype.insert = function( number ){
             }
         }
     }
-    //this.list.push( node );
+    this.list.push( node );
 }
 
 // TODO
