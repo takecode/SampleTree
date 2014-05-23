@@ -1,4 +1,4 @@
 SampleTree
 ==========
 
-Sample Tree for test.
+Sample Binary Tree for test.
