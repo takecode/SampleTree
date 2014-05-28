@@ -1,3 +1,5 @@
+'use strict';
+
 var MAX = 1000;
 
 function Node( number ){
@@ -13,10 +15,10 @@ function Node( number ){
     else{
         this.number = number;
     }
-};
+}
 
 function Tree(){
-    this.list = new Array();
+    this.list = [];
     this.root = null;
 }
 
@@ -53,9 +55,11 @@ Tree.prototype.insert = function( number ){
         }
     }
     this.list.push( node );
-}
+};
 
+/*
 // TODO
-Tree.prototype.delete = function( node ){
+Tree.prototype.delete = function( node ) {
 
-}
+};
+*/

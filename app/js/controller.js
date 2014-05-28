@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Created by YeongminCha on 2014. 5. 23..
  */
