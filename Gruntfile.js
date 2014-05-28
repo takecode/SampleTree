@@ -48,6 +48,18 @@ module.exports = function (grunt) {
         singleRun: true,
         browsers: ['PhantomJS']
       }
+    },
+    copy: {
+      main: {
+        files: [
+          {src: ['app/css/**'], dest: 'dist/'},
+          {src: ['app/js/**'], dest: 'dist/'},
+          {src: ['app/html/**'], dest: 'dist/'},
+          {src: ['app/index.html'], dest: 'dist/'},
+          {src: ['app/bower_components/bootstrap/dist/css/bootstrap.min.css'], dest: 'dist/'},
+          {src: ['app/bower_components/angular/angular.min.js'], dest: 'dist/'}
+        ]
+      }
     }
   });
 
@@ -60,5 +72,10 @@ module.exports = function (grunt) {
   grunt.registerTask('test', [
     'jshint',
     'karma'
+  ]);
+
+  grunt.registerTask('dist', [
+    'jshint',
+    'copy'
   ]);
 };
