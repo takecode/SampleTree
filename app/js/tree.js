@@ -30,7 +30,7 @@ Tree.prototype.insert = function( number ){
     else{
         var parentNode = this.root;
         while( true ){
-            if( parentNode.number > node.number ){
+            if( parentNode.number < node.number ){
                 if( parentNode.left === null ){
                     parentNode.left = node;
                     node.parent = parentNode;
