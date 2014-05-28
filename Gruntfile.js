@@ -4,17 +4,8 @@ module.exports = function (grunt) {
 
   require('load-grunt-tasks')(grunt);
 
-  var atomShellVersion = '0.12.4';
-  var outDir = 'out';
-
   // Project configuration.
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    'download-atom-shell': {
-      version: atomShellVersion,
-      outputDir: outDir,
-      rebuild: true
-    },
     watch: {
       scripts: {
         options: {
