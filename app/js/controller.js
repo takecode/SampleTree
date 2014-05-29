@@ -9,11 +9,7 @@ var treeAppControllers = angular.module('treeApp.Controller', []);
 treeAppControllers.controller('IndexController', ['$scope', function ( $scope ) {
     $scope.initializeIndex = function () {
         $scope.tree = new Tree();
-        var length = 9;
-        for( var i = 0; i < length; i++ ){
-            $scope.addRandomNode();
-        }
-        $scope.root = $scope.tree.root;
+        $scope.testSample();
     };
 
     $scope.addRandomNode = function(){
@@ -27,6 +23,13 @@ treeAppControllers.controller('IndexController', ['$scope', function ( $scope ) 
     $scope.clear = function(){
         $scope.tree.clear();
     };
+
+    $scope.testSample = function(){
+        var length = 9;
+        for( var i = 0; i < length; i++ ){
+            $scope.addRandomNode();
+        }
+    }
 
     $scope.initializeIndex();
 }]);

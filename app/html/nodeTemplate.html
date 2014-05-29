@@ -1,9 +1,9 @@
-    <span ng-if="root.left">
-        Left({{root.left.depth}}): {{root.left.number}}
-        <!--<span ng-include="'images/node.svg'" onload="number = root.left.number; depth = root.left.depth"> </span>-->
-        <ng-include ng-if="root.left" src="'html/nodeTemplate.html'" onload="root = root.left"></ng-include>
-    </span>
-    <span ng-if="root.right">
-        Right({{root.right.depth}}): {{root.right.number}}
-        <ng-include ng-if="root.right" src="'html/nodeTemplate.html'" onload="root = root.right"></ng-include>
-    </span>
+Node({{node.depth}}): {{node.number}}    
+<span ng-include="'images/node.svg'" onload="number = tree.root.number; depth=tree.root.depth"> </span>
+
+<span ng-if="node.left">
+    <ng-include ng-if="node.left" src="'html/nodeTemplate.html'" onload="node = node.left"></ng-include>
+</span>
+<span ng-if="node.right">
+    <ng-include ng-if="node.right" src="'html/nodeTemplate.html'" onload="node = node.right"></ng-include>
+</span>

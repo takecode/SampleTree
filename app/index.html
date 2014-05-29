@@ -21,10 +21,8 @@
     <input type="submit" class="btn btn-primary btn-sm" id="submit" value="Add Number" />
 </form>
 Count of nodes: {{tree.list.length}}
-Root(0): {{root.number}}
-<span ng-include="'images/node.svg'" onload="number = root.number; depth=root.depth"> </span>
 
-<ng-include src="'html/nodeTemplate.html'"></ng-include>
+<ng-include src="'html/nodeTemplate.html'" onload="node = tree.root"></ng-include>
 
 </body>
 </html>
