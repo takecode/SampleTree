@@ -22,6 +22,11 @@ function Tree(){
     this.root = null;
 }
 
+Tree.prototype.cllear = function(){
+    this.list = [];
+    this.root = null;
+}
+
 Tree.prototype.insert = function( number ){
     var node = new Node( number );
     if( this.root === null || this.root === undefined ){

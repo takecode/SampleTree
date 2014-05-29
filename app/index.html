@@ -20,17 +20,11 @@
     <input type="number" class="number" ng-model="number" placeholder="Type a number" />
     <input type="submit" class="btn btn-primary btn-sm" id="submit" value="Add Number" />
 </form>
-<ul>
-    <li>
-        Count of nodes: {{tree.list.length}}
-    </li>
-    <li>
-        Root(0): {{root.number}}
-    </li>
+Count of nodes: {{tree.list.length}}
+Root(0): {{root.number}}
+<span ng-include="'images/node.svg'" onload="number = root.number; depth=root.depth"> </span>
 
-    <ng-include src="'html/nodeTemplate.html'"></ng-include>
-
-</ul>
+<ng-include src="'html/nodeTemplate.html'"></ng-include>
 
 </body>
 </html>

@@ -24,6 +24,10 @@ treeAppControllers.controller('IndexController', ['$scope', function ( $scope ) 
         $scope.tree.insert( $scope.number );
     };
 
+    $scope.clear = function(){
+        $scope.tree.clear();
+    };
+
     $scope.initializeIndex();
 }]);
 
