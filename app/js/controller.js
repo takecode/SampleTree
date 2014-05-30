@@ -34,7 +34,7 @@ treeAppControllers.controller('IndexController', ['$scope', function ( $scope ) 
 
     $scope.getCx = function( x, depth ){
         var width = 30;
-        return ( $scope.tree.maxDepth - depth ) * width + x * width + width;
+        return ( $scope.tree.maxDepth - depth ) * width * 2 + x * width + width;
     }
 
     $scope.getCy = function( depth ){
