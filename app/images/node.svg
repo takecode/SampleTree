@@ -10,14 +10,14 @@ id="down"
 />
 <circle ng-attr-cx="{{getCx( node )}}" 
 ng-attr-cy="{{getCy( node.depth )}}" 
-r="14" 
+r="10" 
 style="stroke:#006600; fill=black" 
 id="top"
 />
 <text ng-attr-x="{{getCx( node ) - 8}}" 
 ng-attr-y="{{getCy( node.depth ) + 2}}" 
 font-family="sans-serif" 
-font-size="10px" 
+font-size="9px" 
 fill="white">
 {{node.number}}
 </text>

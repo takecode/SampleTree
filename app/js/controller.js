@@ -42,7 +42,7 @@ treeAppControllers.controller('IndexController', ['$scope', function ( $scope ) 
     };
 
     $scope.getCx = function( node ){
-        var width = 30;
+        var width = 25;
         var parentNode = node.parent;
         if( parentNode === undefined || parentNode === null ){
             node.x = Math.pow( 2, $scope.tree.maxDepth - 1 ) * width + width;
@@ -59,7 +59,7 @@ treeAppControllers.controller('IndexController', ['$scope', function ( $scope ) 
     };
 
     $scope.getCy = function( depth ){
-        var height = 40;
+        var height = 30;
         return height + depth * height;
     };
 
