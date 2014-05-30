@@ -8,6 +8,7 @@ function Node( number ){
     this.left = null;
     this.right = null;
     this.depth = 0;
+    this.indent = 0; // to find position in tree view.
 
     if( number === undefined ){
         this.number = Math.floor((Math.random() * MAX) + 1);
@@ -20,6 +21,7 @@ function Node( number ){
 function Tree(){
     this.list = [];
     this.root = null;
+    this.maxDepth = 0;
 }
 
 Tree.prototype.cllear = function(){
@@ -40,6 +42,7 @@ Tree.prototype.insert = function( number ){
                     parentNode.left = node;
                     node.parent = parentNode;
                     node.depth = parentNode.depth + 1;
+                    node.indent = parentNode.indent * 2;
                     break;
                 }
                 else{
@@ -51,6 +54,7 @@ Tree.prototype.insert = function( number ){
                     parentNode.right = node;
                     node.parent = parentNode;
                     node.depth = parentNode.depth + 1;
+                    node.indent = parentNode.indent * 2 + 1;
                     break;
                 }
                 else{
@@ -58,6 +62,8 @@ Tree.prototype.insert = function( number ){
                 }
             }
         }
+
+        if( this.maxDepth < node.depth ) this.maxDepth = node.depth; 
     }
     this.list.push( node );
 };

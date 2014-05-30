@@ -1,6 +1,24 @@
-<svg  >
-<g>
-  <circle cx="64" cy="54"  r="14" style="stroke:#006600; fill=black" />
-  <text x="55" y="56" font-family="sans-serif" font-size="10px" fill="white">{{number}}.{{depth}}</text>
-  </g>
+<svg>
+<g ng-repeat="node in tree.list">
+<line ng-if="node.parent"
+ng-attr-x1="{{getCx( node.indent, node.depth)}}"
+ng-attr-y1="{{getCy( node.depth )}}" 
+ng-attr-x2="{{getCx( node.parent.indent, node.parent.depth )}}" 
+ng-attr-y2="{{getCy( node.parent.depth )}}" 
+style="stroke:rgb(255,0,0);stroke-width:2" 
+/>
+<circle ng-attr-cx="{{getCx( node.indent, node.depth )}}" 
+ng-attr-cy="{{getCy( node.depth )}}" 
+r="15" 
+style="stroke:#006600; fill=black" 
+/>
+<text ng-attr-x="{{getCx( node.indent, node.depth ) - 12}}" 
+ng-attr-y="{{getCy( node.depth ) + 2}}" 
+font-family="sans-serif" 
+font-size="10px" 
+fill="white">
+{{node.number}}
+</text>
+</g>
 </svg>
+
