@@ -1,20 +1,20 @@
 <svg>
 <g ng-repeat="node in tree.list">
 <line ng-if="node.parent"
-ng-attr-x1="{{getCx( node.indent, node.depth)}}"
-ng-attr-y1="{{getCy( node.depth )}}" 
-ng-attr-x2="{{getCx( node.parent.indent, node.parent.depth )}}" 
+ng-attr-x1="{{getCx( node )}}"
+ng-attr-y1="{{getCy( node.depth ) - 3}}" 
+ng-attr-x2="{{getCx( node.parent )}}" 
 ng-attr-y2="{{getCy( node.parent.depth ) + 3}}" 
 style="stroke:rgb(0,0,0);stroke-width:2" 
 id="down"
 />
-<circle ng-attr-cx="{{getCx( node.indent, node.depth )}}" 
+<circle ng-attr-cx="{{getCx( node )}}" 
 ng-attr-cy="{{getCy( node.depth )}}" 
 r="14" 
 style="stroke:#006600; fill=black" 
 id="top"
 />
-<text ng-attr-x="{{getCx( node.indent, node.depth ) - 10}}" 
+<text ng-attr-x="{{getCx( node ) - 8}}" 
 ng-attr-y="{{getCy( node.depth ) + 2}}" 
 font-family="sans-serif" 
 font-size="10px" 
