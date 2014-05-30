@@ -30,17 +30,17 @@ treeAppControllers.controller('IndexController', ['$scope', function ( $scope ) 
         for( var i = 0; i < length; i++ ){
             $scope.addRandomNode();
         }
-    }
+    };
 
     $scope.getCx = function( x, depth ){
         var width = 30;
         return ( $scope.tree.maxDepth - depth ) * width * 2 + x * width + width;
-    }
+    };
 
     $scope.getCy = function( depth ){
         var height = 40;
         return height + depth * height;
-    }
+    };
 
     $scope.initialize();
 }]);
@@ -55,9 +55,9 @@ treeAppControllers.controller('NodeController', ['$scope', function ( $scope ) {
         var depth = $scope.node.depth;
         var width = $scope.treeWidth[depth];
 
-        if( width === undefined ) width = 1;
-        else width++;
-        console.log( "depth:" + depth + " width:" + width );
+        if( width === undefined ) { width = 1; }
+        else { width++; }
+        //console.log( "depth:" + depth + " width:" + width );
 
         $scope.cx = width * 40;
         $scope.cy = 30 + depth * 40;
@@ -68,7 +68,7 @@ treeAppControllers.controller('NodeController', ['$scope', function ( $scope ) {
         console.log( $scope.cx );
 
         $scope.treeWidth[depth] = width;
-    }
+    };
 
     $scope.initialize();
 }]);

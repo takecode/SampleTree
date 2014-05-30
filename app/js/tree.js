@@ -27,7 +27,7 @@ function Tree(){
 Tree.prototype.cllear = function(){
     this.list = [];
     this.root = null;
-}
+};
 
 Tree.prototype.insert = function( number ){
     var node = new Node( number );
@@ -63,7 +63,9 @@ Tree.prototype.insert = function( number ){
             }
         }
 
-        if( this.maxDepth < node.depth ) this.maxDepth = node.depth; 
+        if( this.maxDepth < node.depth ){
+            this.maxDepth = node.depth; 
+        }
     }
     this.list.push( node );
 };
