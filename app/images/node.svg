@@ -1,11 +1,22 @@
 <svg>
 <g ng-repeat="node in tree.list">
-<line ng-if="node.parent"
+<line ng-if="node.parent && isLeftChild( node )"
 ng-attr-x1="{{getCx( node )}}"
-ng-attr-y1="{{getCy( node.depth ) - 3}}" 
+ng-attr-y1="{{getCy( node.depth ) - 10}}" 
 ng-attr-x2="{{getCx( node.parent )}}" 
-ng-attr-y2="{{getCy( node.parent.depth ) + 3}}" 
-style="stroke:rgb(0,0,0);stroke-width:2" 
+ng-attr-y2="{{getCy( node.parent.depth ) + 10}}" 
+stroke="#aa0033"
+stroke-width="2"
+id="down"
+/>
+
+<line ng-if="node.parent && !isLeftChild( node )"
+ng-attr-x1="{{getCx( node )}}"
+ng-attr-y1="{{getCy( node.depth ) - 10}}" 
+ng-attr-x2="{{getCx( node.parent )}}" 
+ng-attr-y2="{{getCy( node.parent.depth ) + 10}}" 
+stroke="#33aa00"
+stroke-width="2"
 id="down"
 />
 <circle ng-attr-cx="{{getCx( node )}}" 
