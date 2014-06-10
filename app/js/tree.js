@@ -22,11 +22,14 @@ function Tree(){
     this.list = [];
     this.root = null;
     this.maxDepth = 0;
+    this.leftestNode = [];
 }
 
 Tree.prototype.cllear = function(){
     this.list = [];
     this.root = null;
+    this.maxDepth = 0;
+    this.leftstNode = [];
 };
 
 Tree.prototype.insert = function( number ){

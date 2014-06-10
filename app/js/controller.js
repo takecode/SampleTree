@@ -64,9 +64,9 @@ treeAppControllers.controller('IndexController', ['$scope', function ( $scope ) 
     };
 
     $scope.isLeftChild = function( node ){
-        if( node.parent === null ) return false;
-        else if( node.parent.left == node ) return true;
-        else return false;
+        if( node.parent === null ) { return false; }
+        else if( node.parent.left === node ){ return true; }
+        else{ return false; }
     };
 
     $scope.initialize();
@@ -91,7 +91,7 @@ treeAppControllers.controller('NodeController', ['$scope', function ( $scope ) {
         $scope.r = 14;
         $scope.x = $scope.cx - 15;
         $scope.y = $scope.cy + 2;
-        $scope.lineColor = "#FF0000";
+        $scope.lineColor = '#FF0000';
         //$scope.test = 1;
 
         console.log( $scope.cx );

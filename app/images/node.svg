@@ -1,4 +1,4 @@
-<svg>
+<svg> 
 <g ng-repeat="node in tree.list">
 <line ng-if="node.parent && isLeftChild( node )"
 ng-attr-x1="{{getCx( node )}}"
