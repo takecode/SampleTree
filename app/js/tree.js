@@ -5,8 +5,9 @@ var MAX = 1000;
 function Node( number ){
     this.number = 0;
     this.parent = null;
-    this.right = null;
-    this.left = null;
+    this.right = null; // right child
+    this.left = null; // left child
+    this.rightFriend = null;
     this.depth = 0;
 
     if( number === undefined ){
