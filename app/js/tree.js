@@ -5,8 +5,8 @@ var MAX = 1000;
 function Node( number ){
     this.number = 0;
     this.parent = null;
-    this.left = null;
     this.right = null;
+    this.left = null;
     this.depth = 0;
 
     if( number === undefined ){
@@ -21,7 +21,7 @@ function Tree(){
     this.list = [];
     this.root = null;
     this.maxDepth = 0;
-    this.leftestNode = [];
+    this.leftstNode = [];
 }
 
 Tree.prototype.clear = function(){
@@ -67,7 +67,41 @@ Tree.prototype.insert = function( number ){
             this.maxDepth = node.depth; 
         }
     }
+
+    //this.findPosition( node );
     this.list.push( node );
+};
+
+Tree.prototype.findPosition = function( node ){
+    var depth = node.depth;
+    if( this.leftstNode[depth] === undefined ){
+        this.leftstNode[depth] = node;
+    }
+    else{
+        var thatNode = this.leftstNode[depth];    
+        var leftNode = null;
+
+        while( true ){
+            if( thatNode.right === null ){
+                thatNode.right = node;
+                break;
+            }
+            else if( thatNode.number > node.number ){
+                if( leftNode === null ){
+                    this.leftstNode[depth] = node;
+                    node.right = thatNode;
+                } 
+                else{
+                    leftNode.right = node;
+                    node.right = thatNode;
+                }
+            }
+            else{
+                leftNode = thatNode;
+                thatNode = thatNode.right;
+            }
+        }
+    }
 };
 
 /*
