@@ -18,6 +18,22 @@ function Node( number ){
     }
 }
 
+// TODO: Need Fixed.
+Node.prototype.getIndent = function( leftstNode ){
+    var count = 0;
+    var node = this;
+    while( true ){
+        if( node === null ) return count;
+        if( leftstNode === node ){
+            return count;
+        }
+        else{
+            count++;
+            node = node.rightFriend;
+        }
+    }
+}
+
 function Tree(){
     this.list = [];
     this.root = null;
@@ -69,7 +85,7 @@ Tree.prototype.insert = function( number ){
         }
     }
 
-    //this.findPosition( node );
+    this.findPosition( node );
     this.list.push( node );
 };
 
@@ -83,23 +99,25 @@ Tree.prototype.findPosition = function( node ){
         var leftNode = null;
 
         while( true ){
-            if( thatNode.right === null ){
-                thatNode.right = node;
-                break;
-            }
-            else if( thatNode.number > node.number ){
-                if( leftNode === null ){
-                    this.leftstNode[depth] = node;
-                    node.right = thatNode;
-                } 
+            if( thatNode.number < node.number ){
+                if( thatNode.rightFriend === null ){
+                    thatNode.rightFriend = node;
+                    break;
+                }
                 else{
-                    leftNode.right = node;
-                    node.right = thatNode;
+                    leftNode = thatNode;
+                    thatNode = thatNode.rightFriend;
                 }
             }
             else{
-                leftNode = thatNode;
-                thatNode = thatNode.right;
+                if( leftNode === null ){
+                    this.leftstNode[depth] = node;
+                    node.rightFriend = thatNode;
+                } 
+                else{
+                    leftNode.rightFriend = node;
+                    node.rightFriend = thatNode;
+                }
             }
         }
     }

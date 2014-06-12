@@ -24,10 +24,14 @@
 Count of nodes: {{tree.list.length}}
 </p>
 <span ng-if="tree.root !== null" ng-init="node = tree.root">
+    <ng-include src="'images/root.svg'">
+    </ng-include>
+</span>
+<p> Tree Original </p>
+<span ng-if="tree.root !== null" ng-init="node = tree.root">
     <ng-include src="'images/node.svg'">
     </ng-include>
 </span>
-<p> hehe </p>
 
 </body>
 </html>

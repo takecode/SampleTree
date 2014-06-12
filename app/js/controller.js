@@ -11,6 +11,7 @@ treeAppControllers.controller('IndexController', ['$scope', function ( $scope ) 
         $scope.tree = new Tree();
         $scope.treeWidth = [];
         $scope.testSample2();
+        console.log( $scope.tree );
     };
 
     $scope.addRandomNode = function(){
@@ -43,8 +44,17 @@ treeAppControllers.controller('IndexController', ['$scope', function ( $scope ) 
 
     $scope.getCx = function( node ){
         var width = 25;
+        var depth = node.depth;
+        var indent = node.getIndent( $scope.tree.leftstNode[depth] );
+        node.x = ( $scope.tree.maxDepth - node.depth ) * width + width;
+        node.x += indent * width;
+        return node.x;
+    }
+
+    $scope.getCxOld = function( node ){
+        var width = 25;
         var parentNode = node.parent;
-        if( parentNode === undefined || parentNode === null ){
+        if( node === $scope.tree.root ){
             node.x = Math.pow( 2, $scope.tree.maxDepth - 1 ) * width + width;
         }
         else{
