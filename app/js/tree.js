@@ -21,10 +21,12 @@ function Node( number ){
 // TODO: Need Fixed.
 Node.prototype.getIndent = function( leftstNode ){
     var count = 0;
-    var node = this;
+    var node = leftstNode;
     while( true ){
-        if( node === null ) return count;
-        if( leftstNode === node ){
+        if( node === null ) {
+            return count;
+        }
+        if( this === node ){
             return count;
         }
         else{
