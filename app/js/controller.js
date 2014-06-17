@@ -49,7 +49,7 @@ treeAppControllers.controller('IndexController', ['$scope', function ( $scope ) 
         node.x = ( $scope.tree.maxDepth - node.depth ) * width + width;
         node.x += indent * width;
         return node.x;
-    }
+    };
 
     $scope.getCxOld = function( node ){
         var width = 25;

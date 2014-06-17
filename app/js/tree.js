@@ -34,7 +34,7 @@ Node.prototype.getIndent = function( leftstNode ){
             node = node.rightFriend;
         }
     }
-}
+};
 
 function Tree(){
     this.list = [];

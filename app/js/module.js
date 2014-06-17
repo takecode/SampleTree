@@ -6,5 +6,6 @@
 
 angular.module('SampleTreeApp',
     [
-        'treeApp.Controller'
+        'treeApp.Controller',
+        'ui.router'
     ]);

@@ -9,6 +9,7 @@
 
     <script src="//localhost:35729/livereload.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="js/tree.js"></script>
     <script src="js/module.js"></script>
     <script src="js/controller.js"></script>
@@ -25,11 +26,6 @@ Count of nodes: {{tree.list.length}}
 </p>
 <span ng-if="tree.root !== null" ng-init="node = tree.root">
     <ng-include src="'images/root.svg'">
-    </ng-include>
-</span>
-<p> Tree Original </p>
-<span ng-if="tree.root !== null" ng-init="node = tree.root">
-    <ng-include src="'images/node.svg'">
     </ng-include>
 </span>
 
