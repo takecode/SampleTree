@@ -1,11 +1,7 @@
 'use strict';
 
 describe('A suite', function() {
-    it( 'For Pass', function(){
-        expect( true ).toBe( true );
-    });
 
-    /*
   var tree;
   var list;
 
@@ -30,5 +26,4 @@ describe('A suite', function() {
     expect(tree.root.right).toBe(tree.list[1]);
     expect(tree.root.right.number).toBe(7);
   });
-  */
 });
